@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>webprograming</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a8b53eab-5c0e-4725-bfac-27c6795024b4" class="page sans"><header><h1 class="page-title">webprograming</h1></header><div class="page-body"><h2 id="e5fd0887-1836-4fb4-9ca2-f68717b7035c" class="">웹프로그래밍 1조 기획서</h2><h2 id="7f5500b7-ef79-4d91-a7fa-d21e4cae9287" class="">참여자</h2><table id="8cc37c5b-78f8-40c9-9820-c7e6eba8a861" class="simple-table"><tbody><tr id="74d7feb5-852a-4fc4-aa05-736b20204c8f"><td id="hsTy" class="" style="width:224.6666717529297px">소속</td><td id="H&lt;xy" class="" style="width:232.66666666666666px">학번</td><td id="iZ~B" class="" style="width:232.66666666666666px">이름</td></tr><tr id="8962d9d5-d92d-42f7-8418-e73e12e03f89"><td id="hsTy" class="" style="width:224.6666717529297px">응용소프트웨어전공</td><td id="H&lt;xy" class="" style="width:232.66666666666666px">60221320 </td><td id="iZ~B" class="" style="width:232.66666666666666px">최은택</td></tr><tr id="8a0022c5-e619-4411-8c73-b35f2420e15d"><td id="hsTy" class="" style="width:224.6666717529297px">응용소프트웨어전공</td><td id="H&lt;xy" class="" style="width:232.66666666666666px">60221329 </td><td id="iZ~B" class="" style="width:232.66666666666666px">김예일</td></tr><tr id="e2188356-4072-4d3c-b5c0-2cd6aeaf61cc"><td id="hsTy" class="" style="width:224.6666717529297px">응용소프트웨어전공</td><td id="H&lt;xy" class="" style="width:232.66666666666666px">60221333 </td><td id="iZ~B" class="" style="width:232.66666666666666px">박솔민</td></tr><tr id="a8034a8e-221f-4808-bab0-2e1b3d94ec35"><td id="hsTy" class="" style="width:224.6666717529297px">응용소프트웨어전공</td><td id="H&lt;xy" class="" style="width:232.66666666666666px">60221340 </td><td id="iZ~B" class="" style="width:232.66666666666666px">장소윤</td></tr><tr id="577ee037-c091-43de-8548-b2c54dac360b"><td id="hsTy" class="" style="width:224.6666717529297px">응용소프트웨어전공</td><td id="H&lt;xy" class="" style="width:232.66666666666666px">60221343 </td><td id="iZ~B" class="" style="width:232.66666666666666px">채서연</td></tr></tbody></table><h2 id="8890c031-8b38-4ffc-b5ff-3cb0418f2f12" class="">목차</h2><ol type="1" id="1e2b03c2-6a43-4618-b8b1-5e8be08d28e5" class="numbered-list" start="1"><li><strong>개요</strong><ol type="a" id="4397a987-c41a-4bb7-9b06-d4e220bf629c" class="numbered-list" start="1"><li>프로젝트 개요</li></ol><ol type="a" id="9ab60bd3-6d7f-4bbf-90fe-a90b3cac6c98" class="numbered-list" start="2"><li>충족되어야 하는 목표</li></ol><ol type="a" id="101f287b-2c88-406a-8d0f-b79d6daaf29c" class="numbered-list" start="3"><li>작성 책임자 식별(페이지마다 작성자 기재)</li></ol></li></ol><ol type="1" id="1204cb28-c945-417e-a17a-39ba3b9557fb" class="numbered-list" start="2"><li><strong>서비스(or프로젝트) 개요</strong><ol type="a" id="77a99a20-4644-452a-b710-b5ae12f31237" class="numbered-list" start="1"><li>달성 대상의 목표와 범위</li></ol><ol type="a" id="cc8d5b06-5732-4a70-93f3-e8f8d6b131ca" class="numbered-list" start="2"><li>제약사항 또는 위험</li></ol></li></ol><ol type="1" id="6c913653-ec50-407f-bf22-c1a8f8ef99ab" class="numbered-list" start="3"><li><strong>서비스 소개</strong><ol type="a" id="32e87333-6151-42be-bd28-657e435e03d4" class="numbered-list" start="1"><li>사이트맵</li></ol><ol type="a" id="42632466-d1d6-4ffe-982b-0ee3385a49e1" class="numbered-list" start="2"><li>화면설계서</li></ol><ol type="a" id="3e908120-0eb4-41c2-8990-8e79be2e44ed" class="numbered-list" start="3"><li>클래스 다이어그램</li></ol></li></ol><ol type="1" id="9c47b73c-88c3-42ee-8f75-558f092097fa" class="numbered-list" start="4"><li>수행해야 하는 작업<ol type="a" id="b4e0fc13-f3c3-47fa-9e08-825d3f7275e8" class="numbered-list" start="1"><li>요약</li></ol><ol type="a" id="3df73b08-4c4f-4e34-bcf5-d545a1a5f8a4" class="numbered-list" start="2"><li>기능 체크리스트</li></ol><ol type="a" id="1cedbe12-0b21-4a2a-9163-90ff0c8d934b" class="numbered-list" start="3"><li>프론트엔드</li></ol><ol type="a" id="110219c5-d574-4120-a3a3-d68143531ae2" class="numbered-list" start="4"><li>백엔드</li></ol><ol type="a" id="ef5d57f7-2bf4-478a-b767-8f9841003187" class="numbered-list" start="5"><li>일정</li></ol></li></ol><ol type="1" id="bba95f3e-e51f-4a14-92d2-2f416badc633" class="numbered-list" start="5"><li>계획 목표를 달성하기 위한 자원</li></ol><ol type="1" id="543a9bbf-1ed2-4dfe-9fb0-b15f5f38f46e" class="numbered-list" start="6"><li>프로젝트 추진 방법<ol type="a" id="16fd0942-459a-4af1-a7c1-a7f66d238fbd" class="numbered-list" start="1"><li>계획 달성에 필요한 방법 및 접근법</li></ol><ol type="a" id="904e5579-1570-4750-83d3-2bd44d813bda" class="numbered-list" start="2"><li>팀 커뮤니케이션 계획</li></ol></li></ol><ol type="1" id="c03e7dd7-bf41-4083-8893-08a547855730" class="numbered-list" start="7"><li>팀 구성원 및 역할<ol type="a" id="6dd931b4-d06f-40b6-bb74-881e5f16fbcb" class="numbered-list" start="1"><li>요약</li></ol><ol type="a" id="e1d8baa7-2dec-470c-92ed-1c667b10476b" class="numbered-list" start="2"><li>세부 기능 구현 역할</li></ol></li></ol><p id="0e26e123-1516-46f5-84e2-25285e40f242" class="">
+</p><hr id="69915a21-13e0-4920-9bb6-e8e9532b2bd3"/><p id="6ca4e1f2-eb79-4ffc-9662-5e21c1f74227" class="">
+</p><h2 id="0e6dbcc3-73e7-48eb-b9ec-a27e61121d21" class=""><strong>개요</strong></h2><h3 id="bc1b6f7b-8a62-4aa1-aeb5-eaf3787d9a9d" class="">프로젝트 개요</h3><p id="16a54e74-4331-410c-bb2a-966b5aade7fd" class=""> 저희가 진행하는 프로젝트는 ‘Banana Planner’로 캘린더 웹 서비스입니다. 다만 타 서비스들과의 차별점은 기본적인 캘린더형 일정 관리에 TodoList 기능과 Diary 기능을 추가하여 새로운 형태의 캘린더 웹 서비스를 만들고자 합니다.</p><p id="b3ea0684-1ebd-48fc-8314-4e4c26579197" class=""> 기존의 캘린더 웹 서비스에서 불편하거나 부족하게 느꼈던 점에 대해 새로운 기능들을 추가하고 유용한 서비스들을 합쳐 이용자들의 계획 수립에 있어서 도움을 주고자 프로젝트를 구상하게 되었습니다.</p><h3 id="efec0bc2-5764-42db-91f2-16edd6f1d90b" class="">충족되어야 하는 목표</h3><p id="76c5caff-3b81-45bc-963d-addddb4c2e6e" class="">Calendar, TodoList, Diary의 기능을 합하여 한 눈에 볼 수 있는 웹 페이지를 만드는 것이 목표입니다. 이 과정에서 HTML, CSS, JS의 개념을 다시 확인하고 프로젝트를 진행하며 JS의 여러 Library나 Framework를 활용하는 법을 익히는 것이 목표입니다.</p><p id="b22844e9-1752-467a-aba5-6e73d44c0eb3" class="">
+</p><h3 id="20347358-9288-45c6-8c60-1d229a49684f" class="">작성 책임자 식별</h3><table id="cfb6ef8a-3daf-466a-b5f4-187a1e09aee0" class="simple-table"><tbody><tr id="d50b7a4f-be1b-47fc-abbf-ce0d89a5ebda"><td id="yC:D" class="" style="width:342px">이름</td><td id="U:u`" class="" style="width:349px">담당 내용</td></tr><tr id="de8501d7-ddfa-4aa3-a504-b6bad7ef71c7"><td id="yC:D" class="" style="width:342px">장소윤 </td><td id="U:u`" class="" style="width:349px">개요, 충족여부 기준(체크리스트), 화면설계서, 전체 화면디자인 , 팀 구성원 및  역할</td></tr><tr id="ffdb1199-ee97-4691-893d-54c88802fa1b"><td id="yC:D" class="" style="width:342px">최은택 </td><td id="U:u`" class="" style="width:349px">서비스(or프로젝트) 개요, 수행해야 하는 작업 및 일정(프로젝트 일정), 클래스다이어그램, 충족여부 기준(체크리스트), 팀 구성원 및 역할</td></tr><tr id="41d084b8-fda2-474b-975f-9d6f6f57d812"><td id="yC:D" class="" style="width:342px">김예일 </td><td id="U:u`" class="" style="width:349px">사이트맵, 충족여부 기준(체크리스트), 프로젝트 추진 방법, 팀 구성원 및 역할</td></tr><tr id="5b3ad98c-5e8e-4518-bb48-76759323f89d"><td id="yC:D" class="" style="width:342px">박솔민 </td><td id="U:u`" class="" style="width:349px">충족여부 기준(체크리스트), 기능 명세서 작성, 프로젝트 추진 방법, 팀 구성원 및 역할</td></tr><tr id="9a33dcb2-0994-4f24-935b-4313d827305c"><td id="yC:D" class="" style="width:342px">채서연 </td><td id="U:u`" class="" style="width:349px">충족여부 기준(체크리스트), 계획 목표를 달성하기 위한 자원, 팀 구성원 및 역할
+</td></tr></tbody></table><h2 id="727680b8-4186-4b59-91d5-83bb1aaa470b" class=""><strong>서비스(or프로젝트) 개요</strong></h2><figure id="069bc88f-2cbe-4b70-85c3-95f79828d0e0" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled.png"><img style="width:1109px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled.png"/></a></figure><h3 id="3d5b79fd-0650-4ec0-b3cc-4c206b9c52ed" class="">달성 대상의 목표와 범위</h3><ul id="501b5bc3-35d7-44aa-8420-1132e1ce51f2" class="bulleted-list"><li style="list-style-type:disc">대상 목표<p id="dd094d51-a9a6-4447-b34f-7284b691ea44" class=""> 본 서비스는 일정 관리, 할 일 목록 관리, 일기 작성 등 다양한 기능을 제공하므로, 개인과 단체 모두에게 적합하다. 위 기능이 적절히 조화를 이뤄  각 달의 일정을 한 눈에 보고 각 날짜마다 해야할일을 작성하고 확인할 수 있으며 추가적으로 일기의 역할을 하여 일정관리에 용이하고 하루를 기록할 수 있다. </p><p id="9d739d65-a075-4d28-a73d-9d37f4993695" class=""> 대상 사용자는 학생, 직장인, 가정주부, 프리랜서 등 남녀노소에 관계없이 다양한 일정과 할 일을 관리해야 하는 모든 연령층의 사람들이 될 수 있다.</p></li></ul><ul id="6676ddbc-f709-4d18-ade6-d1b4bd20f859" class="bulleted-list"><li style="list-style-type:disc">달성 목표 및 범위<ol type="1" id="a4c042d0-4746-4924-8d4d-6242433af94f" class="numbered-list" start="1"><li> 먼저 기본적인 login기능, Calendar기능, todoList기능, Diary기능이 정상적인 작동을 하고 서로 적절히 상호작용하며 이용하는데 각 기능들의 연계에 있어 불편함이 없도록 한다.</li></ol><ol type="1" id="a807c3a8-1131-4f33-9a3d-798ca53bf895" class="numbered-list" start="2"><li>사용자 친화적인 테마(바나나, 원숭이 테마)를 사용하여 이용자들이 직관적이고 쉽게 사용할 수 있는 인터페이스를 제공한다.</li></ol><ol type="1" id="62928644-4b76-4c2c-ae59-0fc10bca5e7d" class="numbered-list" start="3"><li>사용자가 입력한 일정, 할일, 일기 등의 정보를 실시간으로 동기화하여 계정 마다 접근이 가능하도록 한다.</li></ol></li></ul><h3 id="9ba31fad-45a1-4b4c-b164-806fdbf5485c" class="">제약사항 또는 위험</h3><ol type="1" id="479f121e-c751-4c89-8479-1432febae086" class="numbered-list" start="1"><li>현재 웹 프로젝트를 수행해 본 적이 없는 2학년 학생들로 조가 형성되었기에 지금 당장 계획을 수립하고 기획서를 써나가는 데는 문제가 없을 수 있으나, 기술적인 문제나 구현에 대해 시간이 오래 걸리거나 구현을 하지 못하는 등의 문제가 발생할 수 있다. 이러한 경우 감당하지 못하는 상황일 때 과감히 포기하고 계획을 수립해나가거나 팀원들과 협력하여 기술 습득 및 지식 공유에 시간을 더 투자해야한다.</li></ol><ol type="1" id="fff08fe5-bc52-41d2-9456-4ebb7a43496d" class="numbered-list" start="2"><li>지금까지는 개인의 활동에만 집중하였기에 팀 프로젝트라는 역할 분담에 대해서 어려움이 있을 수 있다. 그렇기에 각각의 역할 분담을 제대로 하고 형상 관리에 대한 학습과 협업에 대한 이해가 필요하다.</li></ol><ol type="1" id="366c3259-16ac-4ec6-8e24-b3fe855c14b1" class="numbered-list" start="3"><li>프로젝트 진행 중 요구 사항이 변경되거나 추가된다면, 기존 설계와 계획을 수정해야 하며 이로 인해 프로젝트 일정이 지연될 수 있다. 따라서 프로젝트 진행중 기능에 대한 이의가 생긴다 하더라도 기본의 틀에서 벗어나지 않는 것이 중요하다.</li></ol><ol type="1" id="07245367-13f7-43a5-8c3f-d2b8249fd3cf" class="numbered-list" start="4"><li>보안에 대해 지식이 있는 조원이 없기에 사용자의 일정, 할 일, 일기 등 개인 정보가 서비스에 저장되므로 현재의 다목적 캘린더 프로젝트의 특성상 벡엔드 부분에 대해 보안성을 향상시킬 수 있는 방안을 찾아야 한다.</li></ol><p id="56373ffa-3cc5-4fd4-9aa0-7fd4d5ac1fe4" class="">이러한 제약사항 및 위험 요소들을 최소화하기 위해 지속적인 회의와 개선작업을 진행할 예정이며 각각의 단계에서 생기는 문제다마 팀원들과 함께 협력하며 헤쳐나갈 계획이다.</p><h2 id="8e96a647-fe01-42bb-ab31-31fc9dfd134c" class="">서비스 소개</h2><h3 id="37e0a11b-cc6a-4fe9-9bf2-256016223550" class="">사이트맵</h3><figure id="392b20a5-b314-4b7b-8c1e-31aca2f4e7a3" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/siteMap.png"><img style="width:1280px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/siteMap.png"/></a></figure><h3 id="84ba401f-a423-4386-ac0c-0fe7e7cce488" class="">UI설계서</h3><p id="508e9f1a-79b2-4997-acf4-7599c9cc762e" class="">화면 디자인 툴(Figma)로 디자인
+링크: <a href="https://www.figma.com/file/mHb0cf7nqmUTwkYLWBLOJf/%EB%B0%94%EB%82%98%EB%82%98%ED%94%8C%EB%9E%98%EB%84%88?t=IjVlO7UdMbbfpQlP-1">https://www.figma.com/file/mHb0cf7nqmUTwkYLWBLOJf/바나나플래너?t=IjVlO7UdMbbfpQlP-1</a></p><figure id="d79586b4-c41b-4bc0-aa1d-18600a395771" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%201.png"><img style="width:1357px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%201.png"/></a></figure><figure id="165b2a01-4007-423d-96cd-6e5c92496705" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%202.png"><img style="width:1362px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%202.png"/></a></figure><figure id="74d9324b-d8f5-4755-a0b2-7ab45f6ccd1a" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%203.png"><img style="width:1360px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%203.png"/></a></figure><figure id="5f6f1aff-5ede-4cd9-a2c1-13e341a6db15" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%204.png"><img style="width:1360px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%204.png"/></a></figure><figure id="f967bb3b-a5cc-48d7-85bd-96f459973414" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%205.png"><img style="width:1355px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%205.png"/></a></figure><figure id="178bfc0d-3621-4109-9b7c-55fc0bf327dd" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%206.png"><img style="width:1356px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/Untitled%206.png"/></a></figure><p id="4475c0de-8624-4d6d-963f-043eac029899" class="">
+</p><h3 id="9c67c524-ff68-450d-82a7-06a9a28345ae" class=""><strong>클래스 다이어그램</strong></h3><ol type="1" id="7970a2d8-192b-4b45-b492-3d033e447195" class="numbered-list" start="1"><li>백엔드<ol type="a" id="d57a6af8-dbb8-483c-aed0-17b3a4ec5e72" class="numbered-list" start="1"><li>User<ul id="5104a838-8843-4b5f-826b-35c218324bfc" class="bulleted-list"><li style="list-style-type:disc">요소 : id, username, password, email</li></ul><ul id="403036cf-4abf-4eda-8222-3f72222ea722" class="bulleted-list"><li style="list-style-type:disc">메서드: createAccount, login, updateAccount, deleteAccount</li></ul></li></ol><ol type="a" id="dca77077-2976-43ff-98bf-8cbd488b71ee" class="numbered-list" start="2"><li>Calendar<ul id="babde474-9723-416c-b5ff-c74415a141cc" class="bulleted-list"><li style="list-style-type:disc">요소 : id, user_id, date, events</li></ul><ul id="89b807e8-b3d7-489c-a17a-77a05f85f282" class="bulleted-list"><li style="list-style-type:disc">메서드: getMonth, getWeek, getDay, getEvent</li></ul></li></ol><ol type="a" id="5be2c92d-fe24-4d7f-9b06-15d129dc44b1" class="numbered-list" start="3"><li>Todo<ul id="38d52e75-54ac-4286-bdf9-3ce3d56a0337" class="bulleted-list"><li style="list-style-type:disc">요소 : id, calendar_id, title, description, completed</li></ul><ul id="fc2b3376-5e3e-4863-b6d6-bf2d76710865" class="bulleted-list"><li style="list-style-type:disc">메서드: create, update, delete, read (CRUD)</li></ul></li></ol><ol type="a" id="fe9bc8b4-f357-4a1a-81c4-9b70786a0238" class="numbered-list" start="4"><li>Diary<ul id="d461b3a0-8c24-46a3-9d30-02e528ff1ceb" class="bulleted-list"><li style="list-style-type:disc">요소 : id, calendar_id, text, date</li></ul><ul id="f7cba6f8-3d1f-45a9-8957-f12f500753ec" class="bulleted-list"><li style="list-style-type:disc">메서드: create, update, delete, read (CRUD)</li></ul></li></ol><ol type="a" id="8e9286ff-a1c9-4cac-95b7-280691d9182f" class="numbered-list" start="5"><li>Database<ul id="67babc79-9c04-4aa4-9386-3c5ebe536f1a" class="bulleted-list"><li style="list-style-type:disc">메서드: connect, disconnect, execute</li></ul></li></ol><ol type="a" id="3d1cd5c1-c509-409c-81cb-8cf30cab79a1" class="numbered-list" start="6"><li>API<ul id="5845ad42-35a9-4c84-bc46-8a4e14b6fd93" class="bulleted-list"><li style="list-style-type:disc">메서드: create_route, getInfo, handleRequest</li></ul></li></ol></li></ol><ol type="1" id="599077de-e365-422d-bc87-4df550de9e7a" class="numbered-list" start="2"><li>백엔드<ol type="a" id="1126e3c8-e5c6-4d9a-9452-7b3d0e4ff1ac" class="numbered-list" start="1"><li>LoginView<ul id="ea452a29-2e92-4a24-9606-30f46af22d74" class="bulleted-list"><li style="list-style-type:disc">메서드: render, submit, validate</li></ul></li></ol><ol type="a" id="808dd61f-9406-4ba5-befd-1c296ee5dd1d" class="numbered-list" start="2"><li>SignupView<ul id="e8d8224e-60db-4283-b1dc-0428bb74b9ea" class="bulleted-list"><li style="list-style-type:disc">메서드: render, submit, validate</li></ul></li></ol><ol type="a" id="65d72c6d-ad44-4e03-9e53-4ca1d3842ab5" class="numbered-list" start="3"><li>CalendarView<ul id="087ba8a8-e825-44ad-9fee-ea2bec14c3e1" class="bulleted-list"><li style="list-style-type:disc">요소 : filter</li></ul><ul id="33889005-7716-462f-a7bd-a19bf00d9afa" class="bulleted-list"><li style="list-style-type:disc">메서드: render, change_month, change_week, select_date</li></ul></li></ol><ol type="a" id="25dbca95-b366-4e03-a18f-53a364420d47" class="numbered-list" start="4"><li>TodoListView<ul id="8415cc4d-02f0-47eb-b995-7345c8318d67" class="bulleted-list"><li style="list-style-type:disc">메서드: render, add_todo, edit_todo, delete_todo, toggle_complete</li></ul></li></ol><ol type="a" id="eacf1db7-f66a-4eba-aa04-6eb3f8eae79f" class="numbered-list" start="5"><li>DiaryView<ul id="072b8f25-a922-44e0-9c12-3c8632808c88" class="bulleted-list"><li style="list-style-type:disc">메서드: render, create_diary, update_diary, delete_diary, edit_diary</li></ul></li></ol><ol type="a" id="39e7bf98-d274-4cee-af90-7b08cd0da7a8" class="numbered-list" start="6"><li>ApiService<ul id="dcaf018f-235d-4d66-8c56-36af4bd339fb" class="bulleted-list"><li style="list-style-type:disc">메서드: request, get, post, add, delete</li></ul></li></ol><div id="d10c3b8b-f208-4396-87b9-5b05079b6e5c" class="column-list"><div id="768cf91e-8c3e-49a7-9bc4-172c56906504" style="width:50%" class="column"><figure id="29164009-309b-479b-92b1-c8dac6c9cb94" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/%25ED%2581%25B4%25EB%259E%2598%25EC%258A%25A4%25EB%258B%25A4%25EC%259D%25B4%25EC%2596%25B4%25EA%25B7%25B8%25EB%259E%25A8_%25ED%2594%2584%25EB%25A1%25A0%25ED%258A%25B8%25EC%2597%2594%25EB%2593%259C.png"><img style="width:384px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/%25ED%2581%25B4%25EB%259E%2598%25EC%258A%25A4%25EB%258B%25A4%25EC%259D%25B4%25EC%2596%25B4%25EA%25B7%25B8%25EB%259E%25A8_%25ED%2594%2584%25EB%25A1%25A0%25ED%258A%25B8%25EC%2597%2594%25EB%2593%259C.png"/></a><figcaption>클래스다이어그램 - 프론트엔드</figcaption></figure><p id="129345f5-6d44-4993-9208-38164a301301" class="">
+</p></div><div id="61cc0226-aed3-487e-be7f-ebe47abcf96f" style="width:50%" class="column"><figure id="9b8d105b-1875-4bf8-89ab-117e586ca9a1" class="image"><a href="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/%25ED%2581%25B4%25EB%259E%2598%25EC%258A%25A4%25EB%258B%25A4%25EC%259D%25B4%25EC%2596%25B4%25EA%25B7%25B8%25EB%259E%25A8_%25EB%25B0%25B1%25EC%2597%2594%25EB%2593%259C.png"><img style="width:386px" src="webprograming%20a8b53eab5c0e4725bfac27c6795024b4/%25ED%2581%25B4%25EB%259E%2598%25EC%258A%25A4%25EB%258B%25A4%25EC%259D%25B4%25EC%2596%25B4%25EA%25B7%25B8%25EB%259E%25A8_%25EB%25B0%25B1%25EC%2597%2594%25EB%2593%259C.png"/></a><figcaption>클래스다이어그램 - 백엔드</figcaption></figure><p id="fe1c7e78-cad8-4ae9-87de-67db77b4165e" class="">
+</p></div></div></li></ol><h2 id="f67d281f-26e8-4c15-8f96-61cbd0c14ba3" class=""><strong>수행해야 하는 작업 및 일정</strong></h2><h3 id="95fd57fb-a1df-47fb-9f21-40b5950954f7" class=""><strong>요약</strong></h3><p id="b5da6d64-1570-41e9-9589-e3a132e7935e" class=""> 프로젝트는 크게 백엔드/프론트엔드로 역할을 나누어 진행하며 백엔드 파트를 담당하는 팀원(장소윤, 채서연)은 Database 설계 및 구축, 백엔드 API개발을 맡고 프론트엔드 파트(최은택, 박솔민, 김예일)은 전체적인 인터페이스 개발, 기능 구현 과정을 맡는다.  Calendar, TodoList ,Diary, login의 전체적인 화면 개발 및 기능을 웹페이지에 구현하는 과정이 필요하며, 백엔드와 프론트엔드의 화면을 연결하고 데이터베이스를 연결하여 연계시키는 작업이 필요하다.</p><h3 id="15960360-9064-45f0-aeab-dd68f9b7274e" class="">기능 체크리스트</h3><ol type="1" id="bb1b9748-6014-4ad8-897a-047d73a143fe" class="numbered-list" start="1"><li><strong>로그인page</strong><ul id="35d4a82b-ad55-46c3-ab2e-5e739ca7c9a1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">사용자 계정 등록 기능(회원가입)</span><div class="indented"></div></li></ul><ul id="4fbb3bf3-00f4-440d-9c9c-90615eabc54b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">로그인시 해당 정보를 저장된 계정 정보와 비교(로그인 기능)</span><div class="indented"></div></li></ul><ul id="e3a750d0-d711-424d-8e4a-1509c5fad5f7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">사용자 정보 찾기 기능(아이디/비밀번호 찾기)</span><div class="indented"></div></li></ul><ul id="c8815376-72a1-43ce-a92d-448ca6a7c91d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">사용자 계정 삭제 기능(회원탈퇴)</span><div class="indented"></div></li></ul></li></ol><ol type="1" id="9ea11727-b05c-4fa2-a0e4-a29d8e716203" class="numbered-list" start="2"><li><strong>calendar와 todoList</strong><ul id="30c9591b-4ab5-4d1a-9f76-3067f441172b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이전/다음 달로 변경 가능한 Button</span><div class="indented"></div></li></ul><ul id="c9330364-d217-4131-8ed4-1a77237c0a36" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">캘린더 선택 가능 필터</span><div class="indented"><ul id="de9b9ffb-1ece-46d7-9fb1-552ab728cb9a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">월별</span><div class="indented"></div></li></ul><ul id="b6262a81-2eaa-4d84-9591-f3bffc5f679c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">주차별</span><div class="indented"></div></li></ul></div></li></ul><ul id="7f5f150e-6a8e-45b7-92de-edf4a91839e6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">해당 날짜 할일 미리보기</span><div class="indented"></div></li></ul><ul id="18b3fbc8-b6e5-4a24-adc8-c9c4a1e65a80" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">날짜 누르면 해당 날짜의 TodoList 변경</span><div class="indented"></div></li></ul><ul id="2aed70da-3f29-410b-99da-94eb6ed2fc5d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">생성된 할 일을 클릭하면 수정하거나 삭제할 수 있는 TodoList 편집창이 뜸</span><div class="indented"><ul id="f81fd6d6-2c90-486d-93e4-b7339144d9b3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">편집창의 X 버튼을 누르면 편집창이 사라짐</span><div class="indented"></div></li></ul><ul id="83d385b9-b387-483f-95db-870cff3ec98f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">편집창의 구조는 제목란과 내용란으로 나눠져있음</span><div class="indented"></div></li></ul><ul id="2d8e21bd-3523-4a8b-a0c9-bfe9fe075bb4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">편집창에서 제목 혹은 내용을 수정하고 파일 버튼을 클릭하면 수정된 내용이 TodoList에 반영됨.</span><div class="indented"></div></li></ul><ul id="39e6958f-3d32-4185-a1e8-53ae62d00ec7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">쓰레기통 아이콘을 누르면 TodoList가 삭제됨</span><div class="indented"></div></li></ul></div></li></ul><ul id="c711ea96-f6f2-4b43-8390-c9b7d5d7e8ad" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">TodoList 창의 + 버튼을 누르면 TodoList를 추가하거나 삭제할 수 있는 편집창이 뜸</span><div class="indented"></div></li></ul><ul id="1cd3caeb-aab7-41df-8be5-aa47aa2bcf32" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">플러스 버튼을 누르고 다음과 같은 편집창에 제목과 내용을 작성하고 파일 버튼을 클릭하면 TodoList에 해당 Todo가 추가됨</span><div class="indented"></div></li></ul><ul id="359c134a-4ba9-41f2-9da5-034911e0d4d8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">편집창이 뜬 상태에서 x버튼을 클릭하면 추가하기가 취소되고 편집창이 내려감</span><div class="indented"></div></li></ul><ul id="b360de7d-8da5-429d-96e2-28e21aee165b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">편집창에서 새로 추가할 todo의 제목과 내용 작성 가능</span><div class="indented"></div></li></ul><ul id="760c3579-af74-4930-9d87-0c88d77a6636" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">현재의 월/주의 Text Click시 Calendar Map이 뜸</span><div class="indented"></div></li></ul><ul id="bb93c40b-b803-4566-a4b8-455fe3fa73cb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">해당 Calendar Map에서 선택한 날짜로 이동</span><div class="indented"></div></li></ul><ul id="507db462-9c81-4e09-a4da-329986a0670f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">두 번째 파일 Click시 일기를 작성할 수 있는 TextArea가 뜸</span><div class="indented"></div></li></ul><ul id="be706e5b-7661-4594-bb37-3ce0142c0af2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">저장 버튼을 추가하여 입력된 Text값이 해당 날짜에 저장</span><div class="indented"></div></li></ul><ul id="02b79089-dc32-4ff2-969d-9421a0456e09" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이미 저장된 TextArea를 Double Click시 수정 가능</span><div class="indented"></div></li></ul><ul id="f78fa518-bec3-4fb5-9556-3ed9e8748e92" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">일기가 저장된 날일 경우 바나나 아이콘을 해당 날짜의 달력 아래에 추가</span><div class="indented"></div></li></ul><ul id="bc5e00ec-3571-439d-b3e3-d5d243b4859c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">바나나 아이콘 Click시 해당 날짜의 일기를 보여줌</span><div class="indented"></div></li></ul><ul id="68293f50-c091-4ea3-9dbd-9c213e946e54" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">시간이 지나갈수록 바나나 아이콘이 갈변함</span><div class="indented"></div></li></ul></li></ol><h3 id="c78dfe94-06d2-44c1-be89-3caa1a1afa63" class="">프론트엔드</h3><ol type="1" id="041c8d2a-e352-4bb0-898b-aff088f3613a" class="numbered-list" start="1"><li>캘린더(월, 주자별) 화면, todolist목록창, 일기 창 등 전반적인 사용자 인터페이스(UI) 디자인 및 개발</li></ol><ol type="1" id="89a7ea1c-795b-4ef6-b9fd-80f7cc6013f6" class="numbered-list" start="2"><li>로그인 및 회원가입 페이지 개발</li></ol><ol type="1" id="1c9c9d30-255a-4d37-8f1d-7e6eb4db2f15" class="numbered-list" start="3"><li>달력 기능 개발</li></ol><ol type="1" id="db969b9c-8b50-4476-9e3c-0d2ca9047497" class="numbered-list" start="4"><li>할 일 목록 CRUD기능 개발</li></ol><ol type="1" id="841269a9-4d89-4890-85ca-ea43ef2b9845" class="numbered-list" start="5"><li>일기 CRUD기능 개발</li></ol><ol type="1" id="553407f5-d06e-41b3-b186-59e6331c0e2b" class="numbered-list" start="6"><li>벡엔드 API 연동 및 연결 구현</li></ol><h3 id="7d13c189-d378-4485-8139-a375a2b9ebfd" class="">백엔드</h3><ol type="1" id="d6a09d40-497d-41f9-b8fc-c393b9869afe" class="numbered-list" start="1"><li>&lt;Login 관련 CRUD&gt;</li></ol><ul id="3deb37b2-1764-482e-80d2-7def37af9333" class="bulleted-list"><li style="list-style-type:disc">회원가입 버튼 누를 시, 회원가입 창으로 이동</li></ul><ul id="14a0d555-78f5-4bac-b33c-a6d2d89be3cd" class="bulleted-list"><li style="list-style-type:disc">회원가입 창에 정보 입력 후 회원가입을 누르면 사용자 계정 DB에 새 계정 Create</li></ul><ul id="081ff9f8-0620-4de0-bcc0-3542c16fd2c6" class="bulleted-list"><li style="list-style-type:disc">로그인 버튼 누를 시, 사용자 계정 DB에서 해당 계정 DB가 있는지 Read</li></ul><ul id="d77bf6a5-cdc3-4b52-ae33-7b05085b77c6" class="bulleted-list"><li style="list-style-type:disc">비밀번호 수정 버튼 누를 시, 사용자 계정 DB에서 해당 계정 DB가 있는지 Read해 Update</li></ul><ul id="01e46d14-800a-40a7-ab6c-e7f4db4329f0" class="bulleted-list"><li style="list-style-type:disc">계정 삭제 버튼을 누를 시, 사용자 계정 DB에서 해당 계정 DB가 있는지 Read 후 Delete</li></ul><p id="c9709279-5fc0-4b99-979d-f85909ec4f58" class="">
+</p><p id="340c7723-43d5-4452-966c-6a128b498970" class="">&lt;calender&gt;</p><p id="8a5d8aec-3d70-47ca-8b73-81ada6c5a1f7" class="">isChecked( false/true )</p><ul id="a8a947ef-713e-4237-895b-bda423146549" class="bulleted-list"><li style="list-style-type:disc">로그인 성공 시, 해야할 일 DB에서 현재 월의 해야할 일들 전체 Read</li></ul><ul id="d9ebfac9-c941-400a-8abc-877df0d17476" class="bulleted-list"><li style="list-style-type:disc">현재 날짜를 불러와 해당 날짜에 해야할 일들 Read해 옆의 to-do list에 띄워주기, </li></ul><ul id="84c409d8-325e-4477-b746-71920ef6d354" class="bulleted-list"><li style="list-style-type:disc">월 양옆에 있는 화살표를 눌렀을 때, 다음 월의 해야할 일 전체 Read하여 띄우기</li></ul><ul id="5255b940-e0c4-4a20-9621-15b32f17bbad" class="bulleted-list"><li style="list-style-type:disc">일주일 보기를 눌렀을 때, 현재 주의 해야할 일들 전체 Read하여 띄우기. isChecked를 구별하여 하지 않은 일과 한 일을 구별하여 띄우기</li></ul><ul id="f16d6ce2-e165-45a1-9216-53b607ed6170" class="bulleted-list"><li style="list-style-type:disc">특정 날짜를 눌렀을때 해당 날짜의 해야할 일 Read하여 to-do-list 창과 함께 띄우기</li></ul><p id="0eeccc24-d26e-433c-83ce-05766a08a496" class="">
+</p><p id="b48d6c0f-e1d5-4cac-8ad8-2202b2f10230" class="">&lt;to-do list 서비스 관련 CRUD&gt;</p><ul id="a4b8191d-92aa-4b04-b6f8-ad29c8096738" class="bulleted-list"><li style="list-style-type:disc">편집창의 쓰레기통 아이콘을 누르면 해당 to-do list가 Delete</li></ul><ul id="51daeec4-75e6-4b95-a000-0f3a6bb9e2c8" class="bulleted-list"><li style="list-style-type:disc">편집창의 + 아이콘을 누르면 해당 to-do list Read하여 띄워줌</li></ul><ul id="24ffbb28-dd78-402e-b266-a07e04992375" class="bulleted-list"><li style="list-style-type:disc">편집창에 내용을 입력하고 저장 버튼을 누르면 Create하여 DB에 저장</li></ul><p id="a38da847-b7c3-470f-a850-cff88069e345" class="">
+&lt;일기 CRUD&gt;</p><ul id="64b576c0-1e5e-4c47-9550-28af87d0deff" class="bulleted-list"><li style="list-style-type:disc">일기 작성 Textarea에 내용을 채워 넣고 저장 버튼을 누르면 Create하여 해당 날짜 일기 DB에 저장</li></ul><ul id="f0f47f97-31af-409a-89b4-6f945ac86766" class="bulleted-list"><li style="list-style-type:disc">저장된 날짜 DB를 가지고 와서 시간 지난 정도를 계산, 바나나 아이콘 갈변을 표현</li></ul><ul id="9360c27c-d193-427b-bfff-e92506504a83" class="bulleted-list"><li style="list-style-type:disc">더블 클릭시 일기 수정 가능한 칸이 뜬다</li></ul><ul id="ae0a3606-8f85-45bd-8591-8801e06fe5ed" class="bulleted-list"><li style="list-style-type:disc">바나나 아이콘 클릭시 일기 DB Read하여 띄우기</li></ul><p id="af82585f-28fe-4a69-bf81-4095bea06d74" class="">
+</p><h3 id="cb4d7863-8fe8-4351-a1ee-e60a9679a699" class="">일정</h3><p id="185da592-7fee-455a-8575-cafac49c3af6" class="">프로젝트 진행 일정을 총 5주차로 아래와 같이 나누었다.</p><table id="9078386e-0381-42fe-a0a6-ec8fcf6208f4" class="simple-table"><tbody><tr id="c10f5d9e-1175-4134-b8cf-e20b63ee661f"><th id="cb?T" class="simple-table-header-color simple-table-header" style="width:97px">1주차</th><td id="jefs" class="" style="width:639px">1. 만들어진 피그마를 기반으로 UI/UX 디자인 심화 설계
+2. 프론트 엔드 요구사항 정의 및 기능 상세히 이해 및 구조 설계
+3. 개발 환경 설정 및 필요한 도구 선택
+4. 현재 프로젝트 협업을 위한 깃허브 repository생성 및 브랜치 생성</td></tr><tr id="7ea3d384-3e4c-484f-acd7-8afc31f22350"><th id="cb?T" class="simple-table-header-color simple-table-header" style="width:97px">2주차</th><td id="jefs" class="" style="width:639px">1. 데이터 베이스 설계 및 구축
+2. 백엔드 API 개발(달력 데이터 관리, 할 일 목록 데이터 관리, 일기 데이터 관리)
+3. 로그인 웹 페이지 프론트 개발
+4. 로그인 기능, 회원가입 기능, 회원삭제 기능 개발</td></tr><tr id="17d4d687-abe7-48d9-9aae-b5053a03f992"><th id="cb?T" class="simple-table-header-color simple-table-header" style="width:97px">3주차</th><td id="jefs" class="" style="width:639px">1. 백엔드 API 개발 완료(달력 데이터 관리, 할 일 목록 데이터 관리)
+2. Calendar 전체기능 개발
+3. todoList CRUD중 CR 개발</td></tr><tr id="4972b956-2bf1-4693-81d4-5cc05d5ac986"><th id="cb?T" class="simple-table-header-color simple-table-header" style="width:97px">4주차</th><td id="jefs" class="" style="width:639px">1. 백엔드 API 개발 완료(일기 데이터 관리)
+2. todoList CRUD중 UD 개발
+3. 일기 CRUD기능 전체 개발</td></tr><tr id="201ab5c9-8ca0-40e5-a370-24704410428d"><th id="cb?T" class="simple-table-header-color simple-table-header" style="width:97px">5주차</th><td id="jefs" class="" style="width:639px">1. 테스트를 진행하고 각 파트 조원의 피드백 수집
+2. 오류 수정 및 일정부분 개선 사항 반영
+3. 최종 오류 수정 및 세부사항 조절
+4. 서비스 실행 및 지속적인 테스트 반복</td></tr></tbody></table><h2 id="7f737ccc-0df0-4486-93e8-2d7b029e1754" class=""><strong>계획 목표를 달성하기 위한 자원</strong></h2><ol type="1" id="eaf037c4-db18-49fd-8590-1dd2f1ad34b6" class="numbered-list" start="1"><li>시간: 프로젝트의 일정을 계획하고 관리하는 것이 중요합니다. 일정 계획 시, 개발 단계별로 시간을 배분하고, 팀원들의 업무량을 고려하여 충분한 시간을 할애해야 합니다. 또한, 예기치 않은 상황이 발생할 경우를 대비하여 유연한 일정 관리가 필요합니다.</li></ol><ol type="1" id="4ee81a15-0223-4fc4-9bea-8d6aff4131c2" class="numbered-list" start="2"><li>인원: 프로젝트를 수행할 팀원들을 모집하고 역할을 분배합니다. 팀원들은 각자의 전문 분야가 있어야 하며, 웹 개발, 데이터베이스, UI/UX 디자인, 테스트 및 품질 관리 등 프로젝트에 필요한 역량을 갖추고 있어야 합니다. 팀원들의 역량을 효율적으로 활용하기 위해 업무 분장 및 협업이 필요합니다.</li></ol><ol type="1" id="bce64c5e-9a76-4da9-ab96-d71982e1aaac" class="numbered-list" start="3"><li>재료: 웹 애플리케이션 개발에 필요한 소프트웨어 및 라이브러리를 준비합니다. 프론트엔드 개발에는 HTML, CSS, JavaScript와 같은 기술이 필요하며, 백엔드 개발에는 Node.js, Django 등의 기술을 사용할 수 있습니다. 또한, 코드 버전 관리를 위한 Git과 같은 도구가 필요합니다.</li></ol><ol type="1" id="547aa856-4c0a-4d41-9c61-9b9416603c26" class="numbered-list" start="4"><li>장비: 개발 및 테스트를 위한 컴퓨터와 서버 등의 하드웨어 장비가 필요합니다. 팀원들이 원활한 개발 환경에서 작업할 수 있도록 충분한 사양의 컴퓨터를 제공해야 하며, 웹 애플리케이션을 호스팅하기 위한 서버나 클라우드 서비스를 준비해야 합니다.</li></ol><ol type="1" id="433c4aba-bb87-41c0-ba1e-6f0327c33dfd" class="numbered-list" start="5"><li>예산: 프로젝트를 진행하기 위해 필요한 자금을 확보해야 합니다. 예산은 인건비, 소프트웨어 및 하드웨어 구매 비용, 서버 및 클라우드 서비스 비용, 교육 및 훈련 비용, 마케팅 및 홍보 비용 등 다양한 항목에 사용됩니다. 프로젝트 예산을 효율적으로 사용하기 위해 비용 대비 효과를 고려하며 지출을 관리해야 합니다.</li></ol><p id="18ae8cb6-6f68-4f95-a7bd-1cca5e516513" class="">
+</p><h2 id="41d7084f-7df0-46e1-99fa-240d7b540590" class=""><strong>프로젝트 추진 방법</strong></h2><h3 id="2700fe6a-3a5a-46fa-a1ac-fdd9aac80766" class="">계획 달성에 필요한 방법/접근법</h3><ol type="1" id="e3d097b8-fae7-4736-895e-6dd1387072cf" class="numbered-list" start="1"><li>명확한 목표 설정<ul id="a6e92d40-b6c0-4dd1-bd0a-763ba7ec7c67" class="bulleted-list"><li style="list-style-type:disc">프로젝트의 목표는 명확하고 구체적으로 설정하고, 팀원들 모두가 이해할 수 있는 형태로 공유해야 합니다.</li></ul></li></ol><ol type="1" id="5e0bdc6b-ab35-47b3-a162-325719f7e1ca" class="numbered-list" start="2"><li>역할 분배  <ul id="0f65534a-d6b4-461a-a09c-586222159052" class="bulleted-list"><li style="list-style-type:disc">프로젝트를 완성해내기 위한 필요한 역할을 명확하게 구분하고 적절히 분배하고, 각자 맡은 역할은 책임감을 가지고 완수해야 합니다. 완수해내기 어려운 부분이 있는 경우, 팀원들과 소통하며 보완해 나가는 것이 중요합니다.</li></ul></li></ol><ol type="1" id="e79a5237-75b1-4fd3-a8c5-a3c3ad6acba2" class="numbered-list" start="3"><li>계획 수립<ul id="81d2d1f8-60f7-4bd8-8e02-a211f60cfcf6" class="bulleted-list"><li style="list-style-type:disc">프로젝트의 범위, 일정, 자원 등을 고려하여 세부 계획을 수립합니다. 세부 계획으로는 개발 단계 별로 일정을 세우고 이를 지켜나가기 위해 팀원들과의 원활한 소통이 이루어져야 합니다.</li></ul></li></ol><ol type="1" id="d9a5a38a-e812-4573-b913-10ad17378e1b" class="numbered-list" start="4"><li>테스트 및 수정 <ul id="2ec804e1-fd15-43c0-b954-2aebdc73e64e" class="bulleted-list"><li style="list-style-type:disc">프로젝트의 목표를 이루었는지 확인하기 위해, 체크리스트를 통해 기능들을 테스트하고 수정해나가며 결과물을 완성해나가야 합니다.</li></ul><ul id="5b36f527-9d91-4f88-9ac2-44961f601ee7" class="bulleted-list"><li style="list-style-type:disc">프로젝트를 완성해내기 위한 필요한 역할을 명확하게 구분하고 적절히 분배하고, 각자 맡은 역할은 책임감을 가지고 완수해야 합니다. 완수해내기 어려운 부분이 있는 경우, 팀원들과 소통하며 보완해 나가는 것이 중요합니다.</li></ul></li></ol><h3 id="1a4ea1b4-8d7e-4089-9601-7b36cb78c507" class="">팀 커뮤니케이션 계획</h3><ul id="8f3665e2-1bb0-42eb-a8d5-7a1ef38ecedd" class="bulleted-list"><li style="list-style-type:disc">Discord를 사용하여 팀원들과 프로젝트 진행 상황이나 방법에 대하여 소통하고,</li></ul><ul id="41d97f7e-f171-4049-ac6f-12f928c2476b" class="bulleted-list"><li style="list-style-type:disc">Github를 통해 진행하는 프로젝트의 코드를 형상 관리하고,</li></ul><ul id="2be18b54-c533-4096-9326-0c1fa53a22ab" class="bulleted-list"><li style="list-style-type:disc">Notion에 있는 기능으로 프로젝트 관련 문서를 공유하고,</li></ul><ul id="534750ed-fc0e-4d47-a8e4-690862a2963b" class="bulleted-list"><li style="list-style-type:disc">팀원들과 회의가 필요할 경우 도서관의 스터디 룸을 이용할 계획입니다.</li></ul><h2 id="8356ee03-907f-41fc-b784-e6715e131504" class=""><strong>팀 구성원 및 역할</strong></h2><h3 id="c1ef82f4-6e54-4f4b-9bd3-e9756e48cfd1" class="">요약</h3><ul id="5b28f24d-5090-4880-8449-27b80998fef4" class="bulleted-list"><li style="list-style-type:disc">프론트(3) - 김예일, 박솔민, 최은택<ul id="9806cd20-9dc9-49b8-9936-5c8b83675052" class="bulleted-list"><li style="list-style-type:circle">사용자 인터페이스 개발</li></ul><ul id="bb0c99ee-6822-4b80-b728-4867294865ea" class="bulleted-list"><li style="list-style-type:circle">반응형 디자인 구현</li></ul><ul id="fc9c7280-b879-4c78-b570-5f3a9d448336" class="bulleted-list"><li style="list-style-type:circle">캘린더 라이브러리를 이용해 기능 구현</li></ul></li></ul><ul id="7a54dbe6-8ca4-4f24-a7f5-ad6e31c76850" class="bulleted-list"><li style="list-style-type:disc">백엔드(1) - 채서연<ul id="6659a1a5-cd4a-4898-a231-ff9f1d2dfe4a" class="bulleted-list"><li style="list-style-type:circle">데이터베이스 연결 기능(백엔드) 구현</li></ul><ul id="f0c259dd-bc2d-4062-90e1-891df8f50e7d" class="bulleted-list"><li style="list-style-type:circle">프론트 엔드와 통신</li></ul></li></ul><ul id="e4b88765-f9f7-4180-8b6c-186f422e1106" class="bulleted-list"><li style="list-style-type:disc">프로젝트 매니저(1) - 장소윤<ul id="0ac4be34-ab23-4325-bb92-16584e2779d4" class="bulleted-list"><li style="list-style-type:circle">기획(스토리)</li></ul><ul id="7f93e797-f364-4f93-9555-0980937fb266" class="bulleted-list"><li style="list-style-type:circle">프로젝트 일정관리</li></ul><ul id="81fe8224-e8e3-401a-be34-a0d72428ad56" class="bulleted-list"><li style="list-style-type:circle">진행상황 모니터링</li></ul></li></ul><h3 id="b3bf47fd-ac9b-4a36-aa4a-0e8bb90571dd" class="">세부 기능 구현 역할</h3><table id="ddbb63b6-b246-45ae-9fa2-758490cd50f9" class="simple-table"><tbody><tr id="2401d45b-f857-4f6b-a939-7b7601600db1"><td id="}Q~V" class="" style="width:126px">기능</td><td id="Jvxw" class="" style="width:664px">프론트엔드</td><td id="cFjc" class="">백엔드</td></tr><tr id="66b73a6a-fad8-4b56-a1e2-9a6801364562"><td id="}Q~V" class="" style="width:126px">Login</td><td id="Jvxw" class="" style="width:664px">### 장소윤, 채서연 
+• <em>사용자 계정 등록 기능(회원가입)</em>
+• <em>로그인시 해당 정보를 저장된 계정 정보와 비교(로그인 기능)</em>
+• <em>사용자 정보 변경 기능(비밀번호 수정)</em>
+• <em>사용자 계정 삭제 기능(회원탈퇴)</em></td><td id="cFjc" class="">장소윤, 채서연 </td></tr><tr id="ed3b934d-b6e8-4188-a172-e3a1b9faf6d9"><td id="}Q~V" class="" style="width:126px">Calendar</td><td id="Jvxw" class="" style="width:664px">### 최은택
+
+- 이전/다음 달로 변경 가능한 Button
+- 캘린더 선택 가능 필터
+    - 월별
+    - 주차별
+
+### 김예일
+
+- 해당 날짜 할일 미리보기
+- 날짜 누르면 해당 날짜의 TodoList 변경
+
+### 박솔민
+
+- 현재의 월/주의 text click시 calendar map이 뜸
+- 해당 calendar map에서 선택한 날짜로 이동</td><td id="cFjc" class="">장소윤, 채서연 </td></tr><tr id="734f4557-85f1-4564-8ab9-a4fa670c9296"><td id="}Q~V" class="" style="width:126px">TodoList</td><td id="Jvxw" class="" style="width:664px">### 최은택
+
+- 생성된 할 일을 클릭하면 수정하거나 삭제할 수 있는 todoList 편집창이 뜸
+    - 편집창의 x 버튼을 누르면 편집창이 사라짐
+    - 편집창의 구조는 제목란과 내용란으로 나눠져있음
+
+### 박솔민
+
+- 편집창에서 제목 혹은 내용을 수정하고 파일 버튼을 클릭하면 수정된 내용이 TodoList에 반영됨.
+- 쓰레기통 아이콘을 누르면 TodoList가 삭제됨
+
+### 김예일
+
+- TodoList창의 플러스 버튼을 누르면 TodoList를 추가하거나 삭제할 수 있는 편집창이 뜸
+- 편집창에 제목과 내용을 작성하고 파일버튼을 클릭하면 TodoList에 해당 Todo가 추가됨
+- 편집창이 뜬 상태에서 X 버튼을 클릭하면 추가하기가 취소되고 편집창이 내려감
+- 편집창에서 새로 추가할 Todo의 제목과 내용 작성 가능</td><td id="cFjc" class="">장소윤, 채서연 </td></tr><tr id="0dd9ad28-c91b-4c5d-bcf8-e13d09b4956e"><td id="}Q~V" class="" style="width:126px">Diary</td><td id="Jvxw" class="" style="width:664px">### 최은택
+
+- 두 번째 파일 Click시 일기를 작성할 수 있는 TextArea가 뜸
+- 저장 버튼을 추가하여 입력된 Text값이 해당 날짜에 저장
+
+### 김예일
+
+- 이미 저장된 TextArea를 Double Click시 수정 가능
+- 일기가 저장된 날일 경우 바나나 아이콘을 해당 날짜의 달력 아래에 추가
+
+### 박솔민
+
+- 바나나 아이콘 Click시 해당 날짜의 일기를 보여줌
+- 시간이 지나갈수록 바나나 아이콘이 갈변함</td><td id="cFjc" class="">장소윤, 채서연 </td></tr></tbody></table></div></article></body></html>
